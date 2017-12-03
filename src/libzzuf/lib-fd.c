@@ -316,6 +316,8 @@ int NEW(accept)(int sockfd, SOCKADDR_T *addr, SOCKLEN_T *addrlen)
             long int port; \
             switch (addr->sa_family) \
             { \
+            case AF_NETLINK: \
+                break; \
             case AF_INET: \
             case_AF_INET6 \
                 /* We need to copy rather than cast sockaddr* to sockaddr_in* \
